@@ -50,6 +50,14 @@ entity
 + different by ID
 + validation in here
 + immutable class: Order
++ BaseEntity: OrderItem, Product
+  + have unique identifier
+  + An entity class contain the methods to complete critical business rules.
+  + An entity class can act as an Aggregate Root, and in that case forcing all business invariants is responsibility
+    + of that entity.
++ AggregateRoot: Order Entity, Customer Entity
+  + immutable ? D: Entity classes do not have to be immutable. In fact they have state changes methods to run during business logic.
+  + compare differently by ID ?
 
 valueobject
 + immutable value
@@ -62,3 +70,6 @@ common-domain
 
 service:
 + should have behaviors: updateProduct(), createProduct(), delete Product()
++ use behavior's AggregateRoot
+
+
