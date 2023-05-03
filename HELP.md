@@ -80,3 +80,6 @@ Application Service:
 where to fire the event?
 In Application Service. Domain layer should not know about how to fire the event (at Domain Service).
 It should create and return the event after running business logic.
+
+Repository: CustomerRepository, OrderRepo, RestaurantRepo 
++ will be implemented in dataaccess adapters.
