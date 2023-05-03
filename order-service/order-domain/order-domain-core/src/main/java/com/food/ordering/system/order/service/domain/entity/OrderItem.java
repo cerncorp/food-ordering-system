@@ -33,6 +33,9 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         price = builder.price;
         subTotal = builder.subTotal;
     }
+    public static Builder builder() {
+        return new Builder();
+    }
 
     public OrderId getOrderId() {
         return orderId;
@@ -65,9 +68,6 @@ public class OrderItem extends BaseEntity<OrderItemId> {
         private Builder() {
         }
 
-        public static Builder builder() {
-            return new Builder();
-        }
 
         public Builder orderItemId(OrderItemId val) {
             orderItemId = val;

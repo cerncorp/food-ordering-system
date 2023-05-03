@@ -83,3 +83,10 @@ It should create and return the event after running business logic.
 
 Repository: CustomerRepository, OrderRepo, RestaurantRepo 
 + will be implemented in dataaccess adapters.
+
+
+
+Note: 
++ save order in local database and fire the event (automatically) 
++ use Saga and Outbox
++ before fire make sure the changes are commited in local database 
