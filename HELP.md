@@ -68,8 +68,15 @@ valueobject
 common-domain
 + provide domain basic for another service for using
 
-service:
+Domain Service:
 + should have behaviors: updateProduct(), createProduct(), delete Product()
 + use behavior's AggregateRoot
++ in Clean Architecture: Domain Service could be matched to use-cases. bc use-cases describe as the components that drive business entities
 
+Application Service:
++ has no business logic inside.
++ expose to outside through an interface. (use-cases are not exposed.)
 
+where to fire the event?
+In Application Service. Domain layer should not know about how to fire the event (at Domain Service).
+It should create and return the event after running business logic.
