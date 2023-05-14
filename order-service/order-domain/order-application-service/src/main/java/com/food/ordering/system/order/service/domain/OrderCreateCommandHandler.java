@@ -29,8 +29,10 @@ public class OrderCreateCommandHandler {
     public CreateOrderResponse createOrder(CreateOrderCommand createOrderCommand) {
         OrderCreatedEvent orderCreatedEvent = orderCreateHelper.persistOrder(createOrderCommand);
         log.info("Order is created with id: {}", orderCreatedEvent.getOrder().getId().getValue());
+        // option 1: just publish when the transaction is committed completely
+        // option 2*: implementing
         orderCreatedPaymentRequestMessagePublisher.publish(orderCreatedEvent);
-        return orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder());
+        return orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder(), "Order created successfully");
     }
 
 

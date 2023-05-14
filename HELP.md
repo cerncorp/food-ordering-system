@@ -90,3 +90,7 @@ Note:
 + save order in local database and fire the event (automatically) 
 + use Saga and Outbox
 + before fire make sure the changes are commited in local database 
+
+
+TransactionalEventListener is a spring annotation that listens an event that is fired from a transactional method. And it only process the event if the transactional operation is completed successfully.
+
