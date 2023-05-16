@@ -94,3 +94,24 @@ Note:
 
 TransactionalEventListener is a spring annotation that listens an event that is fired from a transactional method. And it only process the event if the transactional operation is completed successfully.
 
+### kafka
+Kafka manager: port 9000
+Kafka registry: 8081
+
+docker-compose -f common.yml -f zookeeper.yml up -d
+
+Zookeeper: Test ruok if server is running on non-error state. -> imok , else not response
+echo ruok | nc localhost 2181
+imok
+
+
+docker-compose -f common.yml -f kafka_cluster.yml up -d
+
+
+docker-compose -f common.yml -f init_kafka.yml up -d
+
+Kafka Manager
+localhost:9000
+add cluster: food-ordering-system-cluster
+zookeeper:2181
+
