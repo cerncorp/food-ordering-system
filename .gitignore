@@ -47,3 +47,8 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/java,maven
+infrastructure/docker-compose/volumes/kafka/broker-1/
+infrastructure/docker-compose/volumes/kafka/broker-2/
+infrastructure/docker-compose/volumes/kafka/broker-3/
+infrastructure/docker-compose/volumes/zookeeper/data/
+infrastructure/docker-compose/volumes/zookeeper/transactions/
